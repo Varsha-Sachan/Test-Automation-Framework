@@ -21,10 +21,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: Execute Maven Test
       run: mvn test -X -Dbrowser=chrome -DisLambdaTest=true -DisHeadless=false
      
-    - name: Upload  Test logs
+    - name: Upload Test logs
       if: always()
       uses: actions/upload-artifact@v4.5.0
       with:
